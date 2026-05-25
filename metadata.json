@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Zenbase",
+  "description": "Jednoduchá databázová aplikace typu Airtable/Notion.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
