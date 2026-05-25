@@ -1,10 +1,17 @@
 package com.example
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import com.example.di.AppContainer
 
 /**
- * Zastřešující aplikace. Inicializuje Dagger Hilt pro Dependency Injection.
+ * Zastřešující aplikace. Poskytuje manuální Service Locator (AppContainer) pro DI,
+ * z důvodu nekompatibility Hiltu s aktuálně využívaným systémovým AGP 9.1.
  */
-@HiltAndroidApp
-class ZenbaseApp : Application()
+class ZenbaseApp : Application() {
+    lateinit var container: AppContainer
+
+    override fun onCreate() {
+        super.onCreate()
+        container = AppContainer(this)
+    }
+}
